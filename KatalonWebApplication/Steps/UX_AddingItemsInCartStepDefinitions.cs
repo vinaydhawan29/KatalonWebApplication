@@ -85,19 +85,9 @@ namespace KatalonWebApplication.Steps
             Item_Price1.Add(Item_3, Price_Item3);
             Item_Price1.Add(Item_4, Price_Item4);
 
-            //foreach (KeyValuePair<string, double> kvp in Item_Price)
-            //{
-            //    Console.WriteLine(kvp.Key, kvp.Value);
-
-            //}
 
             var key = Item_Price1.MinBy(x => x.Value).Key;
             var value = Item_Price1[key];
-
-            //foreach (KeyValuePair<string, double> kvp in Item_Price)
-            //{
-            //    Console.WriteLine(kvp.Key, kvp.Value);
-            //}
 
 
             // returning the lowest key value pair
