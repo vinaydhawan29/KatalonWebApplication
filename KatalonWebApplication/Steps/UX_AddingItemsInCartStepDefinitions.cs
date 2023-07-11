@@ -78,22 +78,26 @@ namespace KatalonWebApplication.Steps
             Price_Item3 = double.Parse(PriceOfItem3.Remove(0, 1));
             Price_Item4 = double.Parse(PriceOfItem4.Remove(0, 1));
 
-            //adding all the items in key value pair
+            Dictionary<string, double> Item_Price1 = new Dictionary<string, double>();
 
-            Item_Price = new List<KeyValuePair<string, double>>()
-            {
-                    new KeyValuePair<string, double>(Item_1, Price_Item1),
-                    new KeyValuePair<string, double>(Item_2, Price_Item2),
-                    new KeyValuePair<string, double>(Item_3, Price_Item3),
-                    new KeyValuePair<string, double>(Item_4, Price_Item4)
+            Item_Price1.Add(Item_1, Price_Item1);
+            Item_Price1.Add(Item_2, Price_Item2);
+            Item_Price1.Add(Item_3, Price_Item3);
+            Item_Price1.Add(Item_4, Price_Item4);
 
-            };
+            //foreach (KeyValuePair<string, double> kvp in Item_Price)
+            //{
+            //    Console.WriteLine(kvp.Key, kvp.Value);
 
+            //}
 
-            foreach (KeyValuePair<string, double> kvp in Item_Price)
-            {
-                Console.WriteLine(kvp.Key, kvp.Value);
-            }
+            var key = Item_Price1.MinBy(x => x.Value).Key;
+            var value = Item_Price1[key];
+
+            //foreach (KeyValuePair<string, double> kvp in Item_Price)
+            //{
+            //    Console.WriteLine(kvp.Key, kvp.Value);
+            //}
 
 
             // returning the lowest key value pair
@@ -102,6 +106,7 @@ namespace KatalonWebApplication.Steps
             double minimumPrice = PriceComparison.Min();
 
             Console.WriteLine("The lowest price for any of the item is " + minimumPrice);
+            Console.WriteLine("The lowest price for any of the item: " + key + " and the value is: " + value);
         }
 
 

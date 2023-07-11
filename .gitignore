@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/KatalonWebApplication/fine-code-coverage-net6.0/Report
+/KatalonWebApplication/net6.0/Report
